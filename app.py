@@ -272,7 +272,7 @@ def display_results(results):
             st.download_button(
                 label="📥 Download JSON",
                 data=json_data,
-                file_name=f"document_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
+                file_name="challenge1b_output.json",
                 mime="application/json"
             )
     
