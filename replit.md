@@ -9,6 +9,7 @@ The Intelligent Document Analyst is a Streamlit-based web application that proce
 Preferred communication style: Simple, everyday language.
 Document upload limit: Allow 3-10 documents per analysis session (updated July 28, 2025).
 JSON export filename: Use "challenge1b_output.json" as default filename (updated July 28, 2025).
+Deployment: Application must run locally using Docker (updated July 28, 2025).
 
 ## System Architecture
 
@@ -82,9 +83,10 @@ JSON export filename: Use "challenge1b_output.json" as default filename (updated
 ## Deployment Strategy
 
 ### Current Setup
-- **Platform**: Designed for local development and deployment
-- **Dependencies**: Requires manual installation of required packages
-- **spaCy Model**: Optional dependency with graceful fallback to basic processing
+- **Platform**: Docker containerized for local deployment
+- **Dependencies**: Automatically installed via UV package manager in Docker image
+- **Local Processing**: TF-IDF and scikit-learn for offline NLP analysis
+- **Port**: Runs on port 5000 with health checks enabled
 
 ### Architecture Decisions
 - **Modular Design**: Separated concerns for easier maintenance and testing
