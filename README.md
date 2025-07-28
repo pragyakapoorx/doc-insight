@@ -4,19 +4,22 @@ An AI-powered document analysis tool that extracts and prioritizes relevant sect
 
 ## Features
 
-- **Multi-Format Support**: Process PDF, DOCX, and TXT documents
+- **Multi-Format Support**: Process PDFs
 - **Persona-Based Analysis**: Tailored content extraction based on user roles
 - **Local Processing**: No internet required during analysis (uses TF-IDF and scikit-learn)
 - **Fast Performance**: Processes 3-10 documents in under 60 seconds
-- **Lightweight**: Uses models under 1GB total size
+- **Lightweight**: Uses TF-IDF and scikit-learn (under 1GB model size)
 - **Export Options**: JSON and CSV export formats
 - **Docker Ready**: Containerized for easy local deployment
 
 ## Quick Start
 
-### Prerequisites
+## System Requirements
 
-- Docker and Docker Compose installed on your system
+- **RAM**: Minimum 2GB available for Docker
+- **Storage**: ~1GB for Docker image and dependencies
+- **System**: AMD64 architecture
+- Docker installed on your system
 
 1. Build the Docker image:
 
@@ -34,71 +37,23 @@ docker run -p 5000:5000 document-analyst
 
 ## Usage
 
-1. **Upload Documents**: Upload 3-10 documents (PDF, DOCX, TXT)
+1. **Upload Documents**: Upload 3-10 documents (PDF)
 2. **Select Persona**: Choose from predefined personas or create custom
 3. **Define Objective**: Describe what you want to accomplish
-4. **Process**: Click "Process Documents" to analyze
-5. **Export**: Download results as "challenge1b_output.json"
+   - Example: "Plan a trip of 4 days for a group of 10 college friends"
+5. **Process**
+  - Click "Process Documents" to analyze
+  - Processing typically takes 10-45 seconds for 3-10 documents
+  - Progress bar shows real-time status
 
-## Features
+6. **Results**:
+  - View ranked sections by relevance
+  - See detailed subsection analysis
+  - Check processing metadata and timing
+    
+7. **Export**: Download results as "challenge1b_output.json"
 
-- **Local Processing**: No internet required during analysis
-- **Multiple Formats**: Supports PDF, DOCX, and TXT files
-- **Fast Analysis**: Processes 3-10 documents in under 60 seconds
-- **Lightweight**: Uses TF-IDF and scikit-learn (under 1GB model size)
-- **Export Options**: JSON and CSV export formats
-
-## Stopping the Application
-
-- If using Docker Compose: `Ctrl+C` then `docker-compose down`
-- If using Docker directly: `Ctrl+C` or `docker stop <container-id>`
-
-## Troubleshooting
-
-1. **Port already in use**: Change the port mapping in docker-compose.yml from "5000:5000" to "8501:5000"
-2. **Memory issues**: Ensure Docker has at least 2GB RAM allocated
-3. **Build issues**: Try `docker-compose build --no-cache`
-
-## Development
-
-For development with live code reloading, the docker-compose.yml includes volume mounting. Your local changes will be reflected in the container.
-
-## System Requirements
-
-- **RAM**: Minimum 2GB available for Docker
-- **Storage**: ~1GB for Docker image and dependencies
-- **CPU**: Any modern processor (multi-core recommended for faster processing)
 ---
-
-### 1. Upload Documents
-- Upload 3-10 documents (PDF, DOCX, or TXT format)
-- Maximum file size depends on your system memory
-
-### 2. Configure Analysis
-- **Select Persona**: Choose from predefined options or create custom:
-  - Travel Planner
-  - Business Analyst
-  - Research Scientist
-  - Marketing Manager
-  - Project Manager
-  - Custom (define your own)
-
-- **Define Objective**: Describe what you want to accomplish
-  - Example: "Plan a trip of 4 days for a group of 10 college friends"
-
-### 3. Process Documents
-- Click "Process Documents" to start analysis
-- Processing typically takes 10-45 seconds for 3-10 documents
-- Progress bar shows real-time status
-
-### 4. Review Results
-- View ranked sections by relevance
-- See detailed subsection analysis
-- Check processing metadata and timing
-
-### 5. Export Results
-- **JSON Export**: Downloads as "challenge1b_output.json"
-- **CSV Export**: Downloads with timestamp for spreadsheet analysis
 
 ## Output Format
 
@@ -132,6 +87,16 @@ The system generates structured JSON output with:
 }
 ```
 ---
+## Stopping the Application
+
+- If using Docker Compose: `Ctrl+C` then `docker-compose down`
+- If using Docker directly: `Ctrl+C` or `docker stop <container-id>`
+
+## Troubleshooting
+
+1. **Port already in use**: Change the port mapping in docker-compose.yml from "5000:5000" to "8501:5000"
+2. **Memory issues**: Ensure Docker has at least 2GB RAM allocated
+3. **Build issues**: Try `docker-compose build --no-cache`
 
 ## Technical Architecture
 
@@ -158,7 +123,7 @@ The system generates structured JSON output with:
 - **python-docx**: DOCX document processing
 - **pandas**: Data manipulation and CSV export
 - **numpy**: Numerical operations
-
+---
 ### Project Structure
 
 ```
