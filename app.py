@@ -81,7 +81,7 @@ def main():
             "Upload documents (PDF, TXT, DOCX)",
             type=['pdf', 'txt', 'docx'],
             accept_multiple_files=True,
-            help="Upload 3-5 documents for optimal processing time"
+            help="Upload 3-10 documents for analysis"
         )
         
         if uploaded_files:
@@ -94,8 +94,10 @@ def main():
         
         # Processing button
         if st.button("🚀 Process Documents", type="primary", disabled=not uploaded_files or not job_to_be_done):
-            if len(uploaded_files) > 5:
-                st.warning("⚠️ For optimal performance, please upload no more than 5 documents")
+            if len(uploaded_files) < 3:
+                st.warning("⚠️ Please upload at least 3 documents for optimal analysis")
+            elif len(uploaded_files) > 10:
+                st.warning("⚠️ For optimal performance, please upload no more than 10 documents")
             else:
                 process_documents(uploaded_files, persona, job_to_be_done, max_sections, min_section_length)
     

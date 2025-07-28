@@ -7,6 +7,7 @@ The Intelligent Document Analyst is a Streamlit-based web application that proce
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Document upload limit: Allow 3-10 documents per analysis session (updated July 28, 2025).
 
 ## System Architecture
 
