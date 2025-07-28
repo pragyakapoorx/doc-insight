@@ -5,23 +5,8 @@ This guide explains how to run the Intelligent Document Analyst locally using Do
 ## Prerequisites
 
 - Docker installed on your system
-- Docker Compose (usually included with Docker Desktop)
 
 ## Quick Start
-
-### Option 1: Using Docker Compose (Recommended)
-
-1. Clone or download the project files
-2. Navigate to the project directory
-3. Run the application:
-
-```bash
-docker-compose up --build
-```
-
-4. Open your browser and go to: `http://localhost:5000`
-
-### Option 2: Using Docker directly
 
 1. Build the Docker image:
 
