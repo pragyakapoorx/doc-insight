@@ -131,6 +131,7 @@ The system generates structured JSON output with:
     }
   ]
 }
+```
 ---
 
 ## Technical Architecture
