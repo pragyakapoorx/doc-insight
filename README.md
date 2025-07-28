@@ -69,7 +69,6 @@ For development with live code reloading, the docker-compose.yml includes volume
 - **Storage**: ~1GB for Docker image and dependencies
 - **CPU**: Any modern processor (multi-core recommended for faster processing)
 ---
-## Pipline
 
 ### 1. Upload Documents
 - Upload 3-10 documents (PDF, DOCX, or TXT format)
