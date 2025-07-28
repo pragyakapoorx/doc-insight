@@ -1,0 +1,1 @@
+# adobe25-challenge-1b-bingpot
