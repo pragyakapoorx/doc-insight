@@ -112,7 +112,7 @@ def main():
 def process_documents(uploaded_files, persona, job_to_be_done, max_sections, min_section_length):
     """Process uploaded documents and extract relevant sections"""
     
-    # Progress tracking
+    # Progress bar
     progress_bar = st.progress(0)
     status_text = st.empty()
     start_time = time.time()
