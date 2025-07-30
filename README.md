@@ -1,4 +1,4 @@
-# PDF Analysis Tool
+# DocInsight
 An AI-powered document analysis tool that extracts and prioritizes relevant sections from document collections based on user personas and objectives. Built with Streamlit and designed for local deployment using Docker.
 <img width="1569" height="597" alt="image" src="https://github.com/user-attachments/assets/722f39f0-b8ee-4b34-9a37-f9b4315f3998" />
 
